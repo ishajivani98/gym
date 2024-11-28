@@ -16,7 +16,7 @@
         <a href="#"><img src="assets/logo.png" alt="logo" /></a>
       </div>
       <ul class="nav__links">
-        <li class="link"><a href="#">Home</a></li>
+        <li class="link"><a href="index.php">Home</a></li>
         <li class="link"><a href="#">Program</a></li>
         <li class="link"><a href="#">Service</a></li>
         <li class="link"><a href="#">About</a></li>
