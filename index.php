@@ -44,12 +44,12 @@
       <div class="explore__grid">
         <div class="explore__card">
           <span><i class="ri-boxing-fill"></i></span>
-          <h4>Strength</h4>
+          <h4>Musalas Gain</h4>
           <p>
-            Embrace the essence of strength as we delve into its various
-            dimensions physical, mental, and emotional.
+            Embrace the essence of Musalas Gain as we delve into its various
+            dimensions physical.
           </p>
-          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+          <a href="musalas_gain.php">Join Now <i class="ri-arrow-right-line"></i></a>
         </div>
         <div class="explore__card">
           <span><i class="ri-heart-pulse-fill"></i></span>
@@ -58,7 +58,7 @@
             It encompasses a range of activities that improve health, strength,
             flexibility, and overall well-being.
           </p>
-          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+          <a href="physical_fitness.php">Join Now <i class="ri-arrow-right-line"></i></a>
         </div>
         <div class="explore__card">
           <span><i class="ri-run-line"></i></span>
@@ -67,7 +67,7 @@
             Through a combination of workout routines and expert guidance, we'll
             empower you to reach your goals.
           </p>
-          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+          <a href="fatlose.php">Join Now <i class="ri-arrow-right-line"></i></a>
         </div>
         <div class="explore__card">
           <span><i class="ri-shopping-basket-fill"></i></span>
@@ -76,7 +76,7 @@
             Designed for individuals, our program offers an effective approach
             to gaining weight in a sustainable manner.
           </p>
-          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+          <a href="weight_gain.php">Join Now <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </section>
