@@ -23,52 +23,63 @@
             <form action="#" class="form">
                 <div class="input-box">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Enter full name" required />
+                    <input type="text" name="txtname" placeholder="Enter full name" required />
                 </div>
 
                 <div class="input-box">
                     <label>Email Address</label>
-                    <input type="text" placeholder="Enter email address" required />
+                    <input type="text" name="txtemail" placeholder="Enter email address" required />
                 </div>
 
                 <div class="column">
                     <div class="input-box">
                         <label>Phone Number</label>
-                        <input type="number" placeholder="Enter phone number" required />
+                        <input type="number" name="txtcontact" placeholder="Enter phone number" required />
                     </div>
                     <div class="input-box">
                         <label>Birth Date</label>
-                        <input type="date" placeholder="Enter birth date" required />
+                        <input type="date" name="txtdate" placeholder="Enter birth date" required />
                     </div>
                 </div>
                 <div class="gender-box">
                     <h3>Gender</h3>
                     <div class="gender-option">
                         <div class="gender">
-                            <input type="radio" id="check-male" name="gender" checked />
+                            <input type="radio" id="check-male" name="gender" value="male" />
                             <label for="check-male">male</label>
                         </div>
                         <div class="gender">
-                            <input type="radio" id="check-female" name="gender" />
+                            <input type="radio" id="check-female" name="gender" value="female" />
                             <label for="check-female">Female</label>
                         </div>
                         <div class="gender">
-                            <input type="radio" id="check-other" name="gender" />
+                            <input type="radio" id="check-other" name="gender" value="other" />
                             <label for="check-other">prefer not to say</label>
                         </div>
                     </div>
                 </div>
+
                 <div class="input-box address">
                     <label>Address</label>
-                    <input type="text" placeholder="Enter street address" required />
-                    <input type="text" placeholder="Enter street address line 2" required />
+                    <input type="text" name="txtaddress" placeholder="Enter street address" required />
+
                     <div class="column">
-                        <input type="number" placeholder="Enter Height " required />
-                        <input type="number" placeholder="Enter weight" required />
+                        <input type="number" name="txtheight" placeholder="Enter Height " required />
+                        <input type="number" name="txtweight" placeholder="Enter weight" required />
                     </div>
                     <div class="column">
-                        <input type="password" placeholder="Enter password " required />
-                        <input type="password" placeholder="confirm password" required />
+                        <input type="password" name="txtpassword" placeholder="Enter password " required />
+                        <input type="password" name="txtconfirm" placeholder="confirm password" required />
+                    </div>
+
+                </div>
+                <div class="gender-box">
+                    <h3></h3>
+                    <div class="gender-option">
+                        <div class="gender">
+                            <input type="checkbox" id="check-male" name="check" checked /> you are coustomer?
+
+                        </div>
                     </div>
                 </div>
                 <button>Submit</button>
