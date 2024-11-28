@@ -7,8 +7,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Web Design Mastery | Fitclub</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Fitclub</title>
   </head>
   <body>
    
