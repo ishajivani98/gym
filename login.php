@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include 'db_connection.php'; // Include the database connection
@@ -7,31 +6,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['logemail']) && isset($_POST['logpassword'])) {
         // Sanitize and retrieve form data
         $email = mysqli_real_escape_string($conn, $_POST['logemail']);
-        $password = mysqli_real_escape_string($conn, $_POST['logpassword']);
+        $password = $_POST['logpassword']; // Do not sanitize the password
 
-        // Query to verify the email and password
-        $sql = "SELECT * FROM tblcustomer WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT * FROM tblcustomer WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['id']; 
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_role'] = $user['role']; 
 
-            $_SESSION['user_id'] = $user['id']; 
-            $_SESSION['user_email'] = $user['email'];
-            $_SESSION['user_role'] = $user['role']; 
-
-
-            if ($user['role'] == 'trainer') {
-                          echo '<script type="text/javascript">
+                if ($user['role'] == 'trainer') {
+                    echo '<script type="text/javascript">
                           alert("Trainer Login successfully");
                           window.location.href = "t_home.php";
                         </script>';
-                          header('Location: t_home.php');
-                      } else {
-                          header("Location: index.php");
-                      }
-            
-            exit();
+                    exit();
+                } else {
+                    echo '<script type="text/javascript">
+                    alert("User Login successfully");
+                    window.location.href = "index.php";
+                  </script>';
+              exit();
+                }
+            } else {
+                // Invalid login credentials
+                $err = "Invalid email or password!";
+            }
         } else {
             // Invalid login credentials
             $err = "Invalid email or password!";

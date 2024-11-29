@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +17,7 @@
 <body>
     <div class="header__content">
         <?php
-        // include "t_header.php"
+        include "t_header.php"
         ?>
         <section class="container_child">
             <h2>Customers List</h2>
@@ -98,10 +98,10 @@
                 
         </section>
         <?php
-//   include "footer.php"
+  include "footer.php"
 ?>
     </div>
 
 </body>
 
-</html> -->
+</html>
