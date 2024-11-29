@@ -1,3 +1,41 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+include 'db_connection.php';
+
+if (!isset($_SESSION['user_id'])) {
+    echo "User not logged in.";
+    exit;
+}
+
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+
+$user_id = intval($_SESSION['user_id']);
+$sql = "SELECT * FROM tblcustomer";
+$query = "
+    SELECT 
+        c.id, 
+        c.cname, 
+        c.email, 
+        c.contact, 
+        c.dob, 
+        c.gender, 
+        c.height, 
+        c.weight 
+    FROM 
+        tblcustomer c
+    INNER JOIN 
+        tbl_subscription s ON c.id = s.c_id
+    WHERE 
+        s.payment_status = 'Success'
+";
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,92 +54,48 @@
 
 <body>
     <div class="header__content">
-        <?php
-        include "t_header.php"
-        ?>
+        <?php include "t_header.php"; ?>
         <section class="container_child">
             <h2>Customers List</h2>
-
-                <table id="customers">
-                    <tr>
-                        <th>Customer Name</th>
-                        <th>Contact</th>
-                        <th>Plan type</th>
-                        <th>Diet plan</th>
-                        <th>Exercise</th>
-                    </tr>
-                    <tr>
-                        <td>Ansh</td>
-                        <td>9876543215</td>
-                        <td>Reguler</td>
-                        <td><button class="plan_disable"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="plan_disable"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Isha</td>
-                        <td>9517538525</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Khushi</td>
-                        <td>9638527415</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Ansh</td>
-                        <td>9876543215</td>
-                        <td>Reguler</td>
-                        <td><button class="plan_disable"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="plan_disable"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Isha</td>
-                        <td>9517538525</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Khushi</td>
-                        <td>9638527415</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Ansh</td>
-                        <td>9876543215</td>
-                        <td>Reguler</td>
-                        <td><button class="plan_disable"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="plan_disable"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Isha</td>
-                        <td>9517538525</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    <tr>
-                        <td>Khushi</td>
-                        <td>9638527415</td>
-                        <td>Pro</td>
-                        <td><button class="plan_add"><a href="t_diet_add.php" class="nostyle_link">Add</a></button></td>
-                        <td><button class="exercise_add"><a href="t_exercise_add.php" class="nostyle_link">Add</a></button></td>
-                    </tr>
-                    
-                </table>
-                
-        </section>
+            <table id="customers">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>DOB</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Exercise</th>
+            <th>Diet</th>
+        </tr>
+    </thead>
+    <tbody>
         <?php
-  include "footer.php"
-?>
-    </div>
+        $result = $conn->query($query); // Use your $query variable here
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>{$row['cname']}</td>
+                        <td>{$row['email']}</td>
+                        <td>{$row['contact']}</td>
+                        <td>{$row['dob']}</td>
+                        <td>{$row['height']}</td>
+                        <td>{$row['weight']}</td>
+                        <td><button class='plan_add'><a href='t_exercise_add.php?id={$row['id']}' class='nostyle_link'>Add</a></button></td>
+                        <td><button class='exercise_add'><a href='t_diet_add.php?id={$row['id']}' class='nostyle_link'>Add</a></button></td>
+                    </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='8'>No records found.</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
 
+        </section>
+        <?php include "footer.php"; ?>
+    </div>
 </body>
 
 </html>

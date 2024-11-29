@@ -1,5 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
 session_start();
+}
 include 'db_connection.php'; // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
