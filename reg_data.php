@@ -54,7 +54,10 @@ if (isset($_POST['btnsubmit'])) {
         VALUES ('{$name}', '{$email}', '{$contact}', '{$date}', '{$gender}', '{$address}', '{$height}', '{$weight}', '{$hashed_password}', '{$user_type}')";
     // Check if the query is successful
     if (mysqli_query($conn, $sql)) {
-        echo "Registration successful!";
+        echo '<script type="text/javascript">
+                alert("Registration successfully");
+                window.location.href = "login.php";
+              </script>';
     } else {
         echo "Error: " . mysqli_error($conn);
     }

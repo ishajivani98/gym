@@ -37,6 +37,26 @@
     color: #333;
 }
 
+.exercise_add {
+    background-color: #04aa0c;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 0px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.exercise_add:hover {
+    background-color: #add8e6;
+    color: #333;
+}
+
 .plan_disable {
     background-color: #cccccc;
     border: none;

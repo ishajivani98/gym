@@ -1,9 +1,8 @@
 
- <?php
+<?php
 session_start();
 include 'db_connection.php'; // Include the database connection
 
-// Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['logemail']) && isset($_POST['logpassword'])) {
         // Sanitize and retrieve form data
@@ -14,23 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "SELECT * FROM tblcustomer WHERE email = '$email' AND password = '$password'";
         $result = mysqli_query($conn, $sql);
 
-        // Check if a record matches the login credentials
         if (mysqli_num_rows($result) > 0) {
-            // Login successful, fetch user data
             $user = mysqli_fetch_assoc($result);
 
-            // Store user information in the session
-            $_SESSION['user_id'] = $user['id']; // Assuming 'id' is the unique user identifier
+            $_SESSION['user_id'] = $user['id']; 
             $_SESSION['user_email'] = $user['email'];
-            $_SESSION['user_role'] = $user['role']; // Assuming there's a 'role' column
+            $_SESSION['user_role'] = $user['role']; 
 
-            // Redirect to the header page
 
             if ($user['role'] == 'trainer') {
-                          // Redirect to trainer's homepage with user_id in URL
+                          echo '<script type="text/javascript">
+                          alert("Trainer Login successfully");
+                          window.location.href = "t_home.php";
+                        </script>';
                           header('Location: t_home.php');
                       } else {
-                          // Redirect to customer's homepage with user_id in URL
                           header("Location: index.php");
                       }
             
@@ -47,38 +44,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login_css.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/registration.css">
+
+    <title>Fitclub</title>
 </head>
+
 <body>
-    <div class="center">
-        <h1>Login</h1>
-        <form method="post">
-            <?php
-            if (isset($err)) {
-                echo '<span style="color:red;" class="err-msg">' . $err . '</span>';
-            }
-            ?>
-            <div class="txt_field">
-                <input type="text" name="logemail" required>
-                <span></span>
-                <label>Email</label>
+    <div class="header__content">
+        <?php include "header.php"; ?>
+        <section class="container_child">
+            <h2>Login</h2>
+            <!-- Set method="POST" to ensure the form sends data as POST -->
+            <form method="POST" class="form">
+                <?php
+                if (isset($err)) {
+                    echo '<span style="color:red;" class="err-msg">' . $err . '</span>';
+                }
+                ?>
+
+                <div class="input-box">
+                    <label>Email Address</label>
+                    <input type="email" name="logemail" placeholder="Enter email address" required />
+                </div>
+                <div class="input-box">
+                    <label>Password</label>
+                    <input type="password" name="logpassword" placeholder="Enter email address" required />
+                </div>
+<br>
+                <div class="pass"><a href="forgot_password.php" class="hover_link">Forgot Password?</a></div>
+                <button type="submit" value="Login">Submit</button>
+            </form>
+            <br>
+            <div class="nostyle_link">
+                Not a member? <a href="registration.php" class="hover_link">Registration</a>
             </div>
-            <div class="txt_field">
-                <input type="password" name="logpassword" required>
-                <span></span>
-                <label>Password</label>
-            </div>
-            <div class="pass"><a href="forgot_password.php">Forgot Password?</a></div>
-            <input type="submit" value="Login">
-            <div class="signup_link">
-                Not a member? <a href="register.php">Signup</a>
-            </div>
-        </form>
+        </section>
+        <?php
+  include "footer.php"
+?>
     </div>
 </body>
+<?php
+    header('location : login.php');
+?>
 </html>
-

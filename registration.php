@@ -15,7 +15,7 @@
     <div class="header__content">
         <?php include "header.php"; ?>
         <section class="container_child">
-            <h2>Registration Form</h2>
+            <h2>Registration</h2>
             <!-- Set method="POST" to ensure the form sends data as POST -->
             <form action="reg_data.php" method="POST" class="form">
                 <div class="input-box">
@@ -70,7 +70,6 @@
                     </div>
                 </div>
                 <div class="gender-box">
-                    <h3>Gender</h3>
                     <div class="gender-option">
                         <div class="gender">
                         <input type="checkbox" name="check" value="customer" <?php if (isset($_POST['check']) && $_POST['check'] == 'customer') { echo 'checked'; } ?> />
@@ -80,48 +79,16 @@
                        
                     </div>
                 </div>
-                <button type="submit" name="btnsubmit">Submit</button>
+                <button type="submit" name="btnsubmit">Register</button>
             </form>
+            <br>
+            <div class="nostyle_link">
+                Have a membership? <a href="login.php" class="hover_link">Login</a>
+            </div>
         </section>
-        <footer class="section__container footer__container">
-            <span class="bg__blur"></span>
-            <span class="bg__blur footer__blur"></span>
-            <div class="footer__col">
-                <div class="footer__logo"><img src="assets/logo.png" alt="logo" /></div>
-                <p>
-                    Take the first step towards a healthier, stronger you with our
-                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
-                </p>
-                <div class="footer__socials">
-                    <a href="#"><i class="ri-facebook-fill"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-twitter-fill"></i></a>
-                </div>
-            </div>
-            <div class="footer__col">
-                <h4>Company</h4>
-                <a href="#">Business</a>
-                <a href="#">Franchise</a>
-                <a href="#">Partnership</a>
-                <a href="#">Network</a>
-            </div>
-            <div class="footer__col">
-                <h4>About Us</h4>
-                <a href="#">Blogs</a>
-                <a href="#">Security</a>
-                <a href="#">Careers</a>
-            </div>
-            <div class="footer__col">
-                <h4>Contact</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">BMI Calculator</a>
-            </div>
-        </footer>
-        <div class="footer__bar">
-            Copyright © 2023 Web Design Mastery. All rights reserved.
-        </div>
+        <?php
+  include "footer.php"
+?>
     </div>
 </body>
 <?php

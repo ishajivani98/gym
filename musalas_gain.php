@@ -165,45 +165,9 @@
 
             <p style="margin-top: 20px">This plan incorporates a variety of exercises to target different muscle groups while promoting fat loss through both strength training and cardio. Adjust the repetitions and sets according to your fitness level, and ensure to maintain a balanced diet to support your fat loss goals.</p><br>
         </section>
-        <footer class="section__container footer__container">
-            <span class="bg__blur"></span>
-            <span class="bg__blur footer__blur"></span>
-            <div class="footer__col">
-                <div class="footer__logo"><img src="assets/logo.png" alt="logo" /></div>
-                <p>
-                    Take the first step towards a healthier, stronger you with our
-                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
-                </p>
-                <div class="footer__socials">
-                    <a href="#"><i class="ri-facebook-fill"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-twitter-fill"></i></a>
-                </div>
-            </div>
-            <div class="footer__col">
-                <h4>Company</h4>
-                <a href="#">Business</a>
-                <a href="#">Franchise</a>
-                <a href="#">Partnership</a>
-                <a href="#">Network</a>
-            </div>
-            <div class="footer__col">
-                <h4>About Us</h4>
-                <a href="#">Blogs</a>
-                <a href="#">Security</a>
-                <a href="#">Careers</a>
-            </div>
-            <div class="footer__col">
-                <h4>Contact</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">BMI Calculator</a>
-            </div>
-        </footer>
-        <div class="footer__bar">
-            Copyright © 2023 Web Design Mastery. All rights reserved.
-        </div>
+        <?php
+  include "footer.php"
+?>
     </div>
 
 </body>

@@ -19,7 +19,7 @@
         include "t_header.php"
         ?>
         <section class="container_child">
-            <h2>Diet Add For Isha</h2>
+            <h2>Exercise Add For Isha</h2>
             <form action="t_process_diet.php" method="POST" class="form">
                 <input type="number" name="customer_id" value="1" hidden />
                 <div class="input-box">
