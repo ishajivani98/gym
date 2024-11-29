@@ -17,7 +17,7 @@
       </div>
       <ul class="nav__links">
         <li class="link"><a href="index.php">Home</a></li>
-        <li class="link"><a href="#">Program</a></li>
+        <li class="link"><a href="login.php">Program</a></li>
         <li class="link"><a href="#">Service</a></li>
         <li class="link"><a href="#">About</a></li>
         <li class="link"><a href="#">Community</a></li>
