@@ -35,10 +35,11 @@ $user = mysqli_fetch_assoc($result);
     </div>
     <ul class="nav__links">
         <li class="link"><a href="t_customer_view.php">Customers</a></li>
-        <li class="link"><a href="test.php">Profile</a></li>
+        <li class="link"><a href="t_profile.php">Profile</a></li>
         <li class="link"><a href="#">Leave Request</a></li>
-        <li class="link"><a href="#">plan</a>
-        <li class="link"><a href="#">Leave Request</a></li>
+        <li class="link"><a href="t_addplan.php
+        ">Exercise plan</a>
+        <li class="link"><a href="t_diet_add.php">diet plan</a></li>
         </li>
         <li class="link"><a href="#">About</a></li>
     </ul>

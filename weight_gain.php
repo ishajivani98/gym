@@ -23,7 +23,6 @@
         }
     </script>
 </head>
-
 <body>
     <div class="header__content">
         <?php
@@ -70,96 +69,7 @@
                 </div>
             </div>
 
-            <div class="w3-card-4" style="width:100%; margin-bottom: 10px;">
-                <header class="w3-container w3-light-grey">
-                    <h3 onclick="toggleContent('wednesdayContent')" style="cursor: pointer;">Wednesday</h3>
-                </header>
-                <div class="w3-container" id="wednesdayContent" style="display: none;">
-                    <hr>
-                    <p style="margin-top: 10px">Leg Press - 4 sets of 6-8 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Barbell Deadlifts - 4 sets of 6-8 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Seated Dumbbell Shoulder Press - 4 sets of 6-8 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Tricep Dips - 4 sets of 8-10 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Bicep Curls - 4 sets of 8-10 reps</p>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="w3-card-4" style="width:100%; margin-bottom: 10px;">
-                <header class="w3-container w3-light-grey">
-                    <h3 onclick="toggleContent('thursdayContent')" style="cursor: pointer;">Thursday</h3>
-                </header>
-                <div class="w3-container" id="thursdayContent" style="display: none;">
-                    <hr>
-                    <p style="margin-top: 10px">Barbell Squats - 4 sets of 6-8 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Chest Flyes - 4 sets of 8-10 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Leg Curls - 4 sets of 8-10 reps</ ```html
-                            <hr>
-                    <p style="margin-top: 10px">Calf Raises - 4 sets of 10-12 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Glute Bridges - 4 sets of 10-12 reps</p>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="w3-card-4" style="width:100%; margin-bottom: 10px;">
-                <header class="w3-container w3-light-grey">
-                    <h3 onclick="toggleContent('fridayContent')" style="cursor: pointer;">Friday</h3>
-                </header>
-                <div class="w3-container" id="fridayContent" style="display: none;">
-                    <hr>
-                    <p style="margin-top: 10px">Sprint for 30 seconds, walk for 1 minute - repeat for 20 minutes</p>
-                    <hr>
-                    <p style="margin-top: 10px">Jump Squats - 4 sets of 8-10 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Push-Up to T - 4 sets of 8-10 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Skaters - 4 sets of 30 seconds</p>
-                    <hr>
-                    <p style="margin-top: 10px">Plank Jacks - 4 sets of 30 seconds</p>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="w3-card-4" style="width:100%; margin-bottom: 10px;">
-                <header class="w3-container w3-light-grey">
-                    <h3 onclick="toggleContent('saturdayContent')" style="cursor: pointer;">Saturday</h3>
-                </header>
-                <div class="w3-container" id="saturdayContent" style="display: none;">
-                    <hr>
-                    <p style="margin-top: 10px">Light Jog or Brisk Walk - 30 minutes</p>
-                    <hr>
-                    <p style="margin-top: 10px">Yoga or Stretching - 20-30 minutes</p>
-                    <hr>
-                    <p style="margin-top: 10px">Foam Rolling - 10-15 minutes</p>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="w3-card-4" style="width:100%; margin-bottom: 10px;">
-                <header class="w3-container w3-light-grey">
-                    <h3 onclick="toggleContent('sundayContent')" style="cursor: pointer;">Sunday</h3>
-                </header>
-                <div class="w3-container" id="sundayContent" style="display: none;">
-                    <hr>
-                    <p style="margin-top: 10px">Kettlebell Swings - 4 sets of 10-12 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Box Jumps - 4 sets of 8-10 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Push-Ups - 4 sets of 10-15 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Plank with Shoulder Taps - 4 sets of 10-12 reps</p>
-                    <hr>
-                    <p style="margin-top: 10px">Side Lunges - 4 sets of 10-12 reps per leg</p>
-                    <hr>
-                </div>
-            </div>
+         
 
 
 
