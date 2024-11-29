@@ -1,9 +1,13 @@
 
 
 
-
 <?php
+error_reporting(0);
+?>
+<?php
+if (session_status() == PHP_SESSION_NONE) {
 session_start();
+}
 include 'db_connection.php';
 
 // Redirect to login if not logged in
